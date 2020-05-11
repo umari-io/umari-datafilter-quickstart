@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h1>Welcome to Umari DataFilter Quickstart!</h1>
+</div>
+
+<div style="display: flex; flex-direction: row;">
+  <h4>Filters</h4>
+  <pre>{{ filters | json: 2  }}</pre>
+  
+  <h4>Filterable</h4>
+  <pre>{{ filterable | json }}</pre>
+</div>
+
+<h4>Response</h4>
+<pre>{{ page | json }}</pre>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,8 @@
+*.DS_Store
+.settings/
+.idea/
+*.iml
+*.attach_pid*
+venv
+__pycache__
+env
