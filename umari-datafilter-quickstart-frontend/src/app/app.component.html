@@ -2,15 +2,40 @@
   <h1>Welcome to Umari DataFilter Quickstart!</h1>
 </div>
 
+<h3>Book Filter Request</h3>
 <div style="display: flex; flex-direction: row;">
-  <h4>Filters</h4>
-  <pre>{{ filters | json: 2  }}</pre>
-  
-  <h4>Filterable</h4>
-  <pre>{{ filterable | json }}</pre>
+  <div>
+    <h4>Filters</h4>
+    <pre>{{ filters | json  }}</pre>
+  </div>
+  <div>
+    <h4>Filterable (Request Body)</h4>
+    <pre>{{ filterable | json }}</pre>
+  </div>
+  <div>
+    <h4>Page of Books (Response)</h4>
+    <pre>{{ page | json }}</pre>
+  </div>
 </div>
 
-<h4>Response</h4>
-<pre>{{ page | json }}</pre>
+<h3>Book Aggregate Request</h3>
+<div style="display: flex; flex-direction: row;">
+  <div>
+    <h4>Filters</h4>
+    <pre>{{ aggFilters | json  }}</pre>
+  </div>
+  <div>
+    <h4>Filterable (Request Body)</h4>
+    <pre>{{ aggFilterable | json }}</pre>
+  </div>
+  <div>
+    <h4>Aggregables (Request Body)</h4>
+    <pre>{{ aggregables | json }}</pre>
+  </div>
+  <div>
+    <h4>Aggregations (Response)</h4>
+    <pre>{{ aggregations | json }}</pre>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

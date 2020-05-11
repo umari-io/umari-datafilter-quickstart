@@ -1,7 +1,5 @@
 package umari.datafilter.quickstart.rest.udf;
 
-import java.time.LocalDateTime;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,8 +29,7 @@ public class BookRest {
      * @return
      */
     @PostMapping
-    public ResponseEntity<Page<?>> filter(@RequestBody UdfRequest udfRequest, Pageable pageable, LocalDateTime date) {
-    	System.out.println(date.getYear());
+    public ResponseEntity<Page<?>> filter(@RequestBody UdfRequest udfRequest, Pageable pageable) {
         return ResponseEntity.ok(udfTemplate.filter(
         		BookSummary.class,
                 udfRequest.getFilterable(),
