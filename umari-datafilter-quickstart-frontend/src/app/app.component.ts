@@ -26,11 +26,10 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.filters = //or(
-      // eq('authorAlive', false),
-      // not(
-      // gt('authorBirthDate', new Date('1900-01-01 00:00:00.00'))
-      //   ),
+    this.filters = or(
+      not(
+        gt('authorBirthDate', new Date('1900-01-01 00:00:00.00'))
+      ),
       and(
         eq('genre', [Genre.DRAMA, Genre.POETRY]),
         or(
@@ -40,7 +39,7 @@ export class AppComponent implements OnInit {
           ne('authorAlive', false)
         )
       )
-    // );
+    );
     this.filterable = toFilterable(this.filters);
     this.bookService.filter(0, 10, 'name', this.filterable)
       .pipe(take(1))
